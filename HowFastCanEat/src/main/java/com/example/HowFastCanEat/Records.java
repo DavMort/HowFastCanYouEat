@@ -42,7 +42,7 @@ public class Records {
         }
     }
     public void populateKorvList() {
-        korvList.add(new Food("Jesper", 10, 2));
+        korvList.add(new Food("David", 10, 2));
         korvList.add(new Food("Jesper", 11, 2));
         korvList.add(new Food("Jesper", 22, 2));
         korvList.add(new Food("Jesper", 13, 2));
