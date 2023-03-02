@@ -21,7 +21,7 @@
         <tr th:each="record : ${korvList}">
             <td th:text="${record.name}"></td>
             <td th:text="${record.numberOfFood}"></td>
-            <td th:text="${record.time}"></td>
+            <td th:text="${record.time} + ' minutes'"></td>
             <td th:text="${record.kpm}"></td>
         </tr>
     </table>
@@ -53,7 +53,7 @@
         <tr th:each="record : ${pizzaList}">
             <td th:text="${record.name}"></td>
             <td th:text="${record.numberOfFood}"></td>
-            <td th:text="${record.time}"></td>
+            <td th:text="${record.time} + ' minutes'"></td>
             <td th:text="${record.kpm}"></td>
         </tr>
     </table>
@@ -85,7 +85,7 @@
         <tr th:each="record : ${burgerList}">
             <td th:text="${record.name}"></td>
             <td th:text="${record.numberOfFood}"></td>
-            <td th:text="${record.time}"></td>
+            <td th:text="${record.time} + ' minutes'"></td>
             <td th:text="${record.kpm}"></td>
         </tr>
     </table>

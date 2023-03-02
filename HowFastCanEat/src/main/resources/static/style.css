@@ -1,13 +1,16 @@
 table {
-  counter-reset: rowNumber;
+    counter-reset: rowNumber;
 }
 
-table tr::before {
-  display: table-cell;
-  counter-increment: rowNumber;
-  content: counter(rowNumber) ".";
-  padding-right: 0.3em;
-  text-align: right;
+table tr:not(:first-child) {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    content: counter(rowNumber) ".";
+    min-width: 1em;
+    margin-right: 0.5em;
 }
 
 .row {
