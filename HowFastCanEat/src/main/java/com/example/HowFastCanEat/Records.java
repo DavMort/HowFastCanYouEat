@@ -53,22 +53,22 @@ public class Records {
     }
 
     public void populatePizzaList() {
-        pizzaList.add(new Food("Jesper", 10, 2));
-        pizzaList.add(new Food("Jesper", 11, 2));
-        pizzaList.add(new Food("Jesper", 22, 2));
-        pizzaList.add(new Food("Jesper", 13, 2));
-        pizzaList.add(new Food("Jesper", 12, 2));
-        pizzaList.add(new Food("Jesper", 16, 2));
+        pizzaList.add(new Food("Jesper", 10, 3));
+        pizzaList.add(new Food("Olle", 11, 5));
+        pizzaList.add(new Food("Frida", 22, 9));
+        pizzaList.add(new Food("Anders", 13, 10));
+        pizzaList.add(new Food("Zirha", 12, 5));
+        pizzaList.add(new Food("Johan", 16, 3));
         sortList(pizzaList);
     }
 
     public void populateBurgerList() {
-        burgerList.add(new Food("Jesper", 10, 2));
-        burgerList.add(new Food("Jesper", 11, 2));
-        burgerList.add(new Food("Jesper", 22, 2));
-        burgerList.add(new Food("Jesper", 13, 2));
-        burgerList.add(new Food("Jesper", 12, 2));
-        burgerList.add(new Food("Jesper", 16, 2));
+        burgerList.add(new Food("Zirha", 10, 3));
+        burgerList.add(new Food("Johan", 11, 5));
+        burgerList.add(new Food("David", 22, 15));
+        burgerList.add(new Food("Yoshi", 13, 8));
+        burgerList.add(new Food("Jesper", 12, 7));
+        burgerList.add(new Food("Pedro", 16, 10));
         sortList(burgerList);
     }
 }
