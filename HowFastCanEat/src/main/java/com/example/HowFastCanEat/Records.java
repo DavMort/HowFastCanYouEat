@@ -25,9 +25,16 @@ public class Records {
     public ArrayList<Food> top3(ArrayList<Food> list) {
         sortList(list);
         ArrayList<Food> top3 = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            top3.add(list.get(i));
+        if (list.size() > 3) {
+            for (int i = 0; i < 3; i++) {
+                top3.add(list.get(i));
+            }
+        } else {
+            for (int i = 0; i < list.size(); i++) {
+                top3.add(list.get(i));
+            }
         }
+
         return top3;
     }
 
@@ -43,16 +50,6 @@ public class Records {
     }
     public void populateKorvList() {
         korvList.add(new Food("David", 10, 2));
-        korvList.add(new Food("Jesper", 11, 2));
-        korvList.add(new Food("Jesper", 22, 2));
-        korvList.add(new Food("Jesper", 13, 2));
-        korvList.add(new Food("Jesper", 12, 2));
-        korvList.add(new Food("Jesper", 16, 2));
-        korvList.add(new Food("Jesper", 2, 2));
-        korvList.add(new Food("Jesper", 4, 2));
-        korvList.add(new Food("Jesper", 5, 2));
-        korvList.add(new Food("Jesper", 7, 2));
-        korvList.add(new Food("Jesper", 21, 2));
         sortList(korvList);
     }
 
