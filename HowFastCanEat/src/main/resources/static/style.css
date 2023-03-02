@@ -30,7 +30,8 @@ input {
 }
 
 body {
-    max-width: 500px;
+    padding-bottom: 150px;
+    max-width: 600px;
     margin: auto;
     color: rgb(202, 202, 202);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
@@ -43,6 +44,8 @@ h1 {
 }
 
 td {
+    max-width: 100px;
+    width: 100px;
     padding-right: 30px;
     border: solid 1px;
 }
@@ -100,7 +103,7 @@ form {
 }
 
 img {
-    margin-left: -150px;
+    margin-left: -80px;
     margin-bottom: -55px
 }
 

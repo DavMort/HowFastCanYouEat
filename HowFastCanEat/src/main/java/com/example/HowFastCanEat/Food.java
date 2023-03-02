@@ -3,6 +3,8 @@ package com.example.HowFastCanEat;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 
+import java.text.DecimalFormat;
+
 public class Food {
     @NotEmpty
     String name;
@@ -46,8 +48,8 @@ public class Food {
         this.time = time;
     }
 
-    public double getKpm() {
-        return kpm;
+    public String getKpm() {
+        return String.format("%.2f", kpm);
     }
 
     public void setKpm(int kpm) {
