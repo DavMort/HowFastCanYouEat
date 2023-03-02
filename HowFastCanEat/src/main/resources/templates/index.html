@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/resources/static/style.css" th:href="'/style.css'">
+</head>
+
+<body>
+<h1><img src="TopDogs_Logo.png" alt="Top Dogs" height="350"></h1>
+<div class="row">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Hotdogs Eaten</th>
+            <th>Time</th>
+            <th>Hotdogs per minute</th>
+        </tr>
+        <tr th:each="record : ${korvList}">
+            <td th:text="${record.name}"></td>
+            <td th:text="${record.numberOfFood}"></td>
+            <td th:text="${record.time}"></td>
+            <td th:text="${record.kpm}"></td>
+        </tr>
+    </table>
+    <a href="/topdogs">
+        <button class="showAll">All HotDogs</button>
+    </a>
+</div>
+<div>
+    <h3>Register New Hot Dog Record</h3>
+</div>
+<form action="/saveHotdog" th:object="${food}" method="POST">
+    <field th:text="${#fields.hasErrors('name')} ? 'Please enter a valid name' : ''"></field>
+    <input id="hotdogname" type="text" th:field="*{name}" placeholder="Please add a name">
+    <field th:text="${#fields.hasErrors('numberOfFood')} ? 'Please enter how many' : ''"></field>
+    <input type="text" th:field="*{numberOfFood}" placeholder="Enter how many hot dogs">
+    <field th:text="${#fields.hasErrors('time')} ? 'Please enter a valid time' : ''"></field>
+    <input type="text" th:field="*{time}" placeholder="Enter time in minutes">
+    <input class="submit" type="submit" value="Submit new Record">
+</form>
+
+<div class="row">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Pizzas Eaten</th>
+            <th>Time</th>
+            <th>Pizzas per minute</th>
+        </tr>
+        <tr th:each="record : ${pizzaList}">
+            <td th:text="${record.name}"></td>
+            <td th:text="${record.numberOfFood}"></td>
+            <td th:text="${record.time}"></td>
+            <td th:text="${record.kpm}"></td>
+        </tr>
+    </table>
+    <a href="/toppizza">
+        <button class="showAll">All pizzas</button>
+    </a>
+</div>
+<div>
+    <h3>Register New Pizza Record</h3>
+</div>
+<form action="/savePizza" th:object="${food}" method="POST">
+    <field th:text="${#fields.hasErrors('name')} ? 'Please enter a valid name' : ''"></field>
+    <input type="text" th:field="*{name}" placeholder="Please add a name">
+    <field th:text="${#fields.hasErrors('numberOfFood')} ? 'Please enter how many' : ''"></field>
+    <input type="text" th:field="*{numberOfFood}" placeholder="Enter how many pizzas">
+    <field th:text="${#fields.hasErrors('time')} ? 'Please enter a valid time' : ''"></field>
+    <input type="text" th:field="*{time}" placeholder="Enter a time in minutes">
+    <input class="submit" type="submit" value="Submit new Record">
+</form>
+
+<div class="row">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Burgers Eaten</th>
+            <th>Time</th>
+            <th>Burgers per minute</th>
+        </tr>
+        <tr th:each="record : ${burgerList}">
+            <td th:text="${record.name}"></td>
+            <td th:text="${record.numberOfFood}"></td>
+            <td th:text="${record.time}"></td>
+            <td th:text="${record.kpm}"></td>
+        </tr>
+    </table>
+    <a href="/topburger">
+        <button class="showAll">All burgers</button>
+    </a>
+</div>
+<div>
+    <h3>Register New Burger Record</h3>
+</div>
+<form action="/saveBurger" th:object="${food}" method="POST">
+    <field th:text="${#fields.hasErrors('name')} ? 'Please enter a valid name' : ''"></field>
+    <input type="text" th:field="*{name}" placeholder="Please add a name">
+    <field th:text="${#fields.hasErrors('numberOfFood')} ? 'Please enter how many' : ''"></field>
+    <input type="text" th:field="*{numberOfFood}" placeholder="Enter how many burgers">
+    <field th:text="${#fields.hasErrors('time')} ? 'Please enter a valid time' : ''"></field>
+    <input type="text" th:field="*{time}" placeholder="Enter a time in minutes">
+    <input class="submit" type="submit" value="Submit new Record">
+</form>
+
+</body>
+
+</html>
