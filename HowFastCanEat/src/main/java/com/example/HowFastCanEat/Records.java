@@ -34,7 +34,6 @@ public class Records {
                 top3.add(list.get(i));
             }
         }
-
         return top3;
     }
 
