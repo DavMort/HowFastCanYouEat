@@ -19,6 +19,9 @@ public class HFCEController {
     @Autowired
     OldRecords oldRecords;
 
+    @Autowired
+    RecordsService recordsService;
+
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("foodHotDog", new OldFood());
@@ -97,5 +100,11 @@ public class HFCEController {
         model.addAttribute("food", "Burgers");
         model.addAttribute("list", oldRecords.burgerList);
         return "fullList";
+    }
+
+    @GetMapping("/test")
+    public String testTop3(Model model) {
+        model.addAttribute("record", recordsService.getTopThree());
+        return "test";
     }
 }

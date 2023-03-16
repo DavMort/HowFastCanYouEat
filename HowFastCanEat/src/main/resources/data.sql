@@ -1,3 +1,13 @@
-INSERT INTO food (id, name) values (1, 'Hot Dog');
-INSERT INTO person (name) values ('Johan');
-INSERT INTO records(person_id, food_id, count_eaten, time_minutes) values (1, 1, 20, 5);
+INSERT INTO FOOD (ID, NAME) VALUES
+(1, 'Dog'),
+(2, 'Pizza'),
+(3, 'Hamburger');
+
+INSERT INTO PERSON (NAME) VALUES
+('David');
+
+INSERT INTO RECORDS (PERSON_ID, FOOD_ID, COUNT_EATEN, TIME_MINUTES) VALUES
+(1, 1, 44, 3),
+(1, 1, 21, 3),
+(1, 1, 55, 3),
+(1, 1, 13, 3);
