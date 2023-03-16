@@ -1,74 +1,67 @@
 package com.example.HowFastCanEat;
 
-import org.springframework.stereotype.Service;
+import jakarta.persistence.*;
 
-import java.util.ArrayList;
-@Service
+@Entity
 public class Records {
 
-    public ArrayList<OldFood> korvList = new ArrayList<>();
-    public ArrayList<OldFood> pizzaList = new ArrayList<>();
-    public ArrayList<OldFood> burgerList = new ArrayList<>();
-
+    @Id
+    @GeneratedValue /*(strategy = GenerationType.IDENTITY)*/
+    private Integer id;
+    private Integer person_id;
+    private Integer food_id;
+    private Integer count_eaten;
+    private Integer time_minutes;
 
     public Records() {
-        populateKorvList();
-        populatePizzaList();
-        populateBurgerList();
     }
 
-    public void addFood(ArrayList<OldFood> list, String name, Integer number, Integer time) {
-        list.add(new OldFood(name, number, time));
-        sortList(list);
+    public Records(Integer id, Integer person_id, Integer food_id, Integer count_eaten, Integer time_minutes) {
+        this.id = id;
+        this.person_id = person_id;
+        this.food_id = food_id;
+        this.count_eaten = count_eaten;
+        this.time_minutes = time_minutes;
     }
 
-    public ArrayList<OldFood> top3(ArrayList<OldFood> list) {
-        sortList(list);
-        ArrayList<OldFood> top3 = new ArrayList<>();
-        if (list.size() > 3) {
-            for (int i = 0; i < 3; i++) {
-                top3.add(list.get(i));
-            }
-        } else {
-            for (int i = 0; i < list.size(); i++) {
-                top3.add(list.get(i));
-            }
-        }
-        return top3;
+    public Integer getId() {
+        return id;
     }
 
-    public void sortList(ArrayList<OldFood> list) {
-        for (int i = 0; i < list.size() - 1; i++) {
-            OldFood temp = list.get(i);
-            if (list.get(i + 1).getNumberOfFood() > temp.getNumberOfFood()) {
-                list.remove(i);
-                list.add(temp);
-                i = 0;
-            }
-        }
-    }
-    public void populateKorvList() {
-        korvList.add(new OldFood("David", 10, 2));
-        sortList(korvList);
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void populatePizzaList() {
-        pizzaList.add(new OldFood("Jesper", 10, 3));
-        pizzaList.add(new OldFood("Olle", 11, 5));
-        pizzaList.add(new OldFood("Frida", 22, 9));
-        pizzaList.add(new OldFood("Anders", 13, 10));
-        pizzaList.add(new OldFood("Zirha", 12, 5));
-        pizzaList.add(new OldFood("Johan", 16, 3));
-        sortList(pizzaList);
+    public Integer getPerson_id() {
+        return person_id;
     }
 
-    public void populateBurgerList() {
-        burgerList.add(new OldFood("Zirha", 10, 3));
-        burgerList.add(new OldFood("Johan", 11, 5));
-        burgerList.add(new OldFood("David", 22, 15));
-        burgerList.add(new OldFood("Yoshi", 13, 8));
-        burgerList.add(new OldFood("Jesper", 12, 7));
-        burgerList.add(new OldFood("Pedro", 16, 10));
-        sortList(burgerList);
+    public void setPerson_id(Integer person_id) {
+        this.person_id = person_id;
     }
+
+    public Integer getFood_id() {
+        return food_id;
+    }
+
+    public void setFood_id(Integer food_id) {
+        this.food_id = food_id;
+    }
+
+    public Integer getCount_eaten() {
+        return count_eaten;
+    }
+
+    public void setCount_eaten(Integer count_eaten) {
+        this.count_eaten = count_eaten;
+    }
+
+    public Integer getTime_minutes() {
+        return time_minutes;
+    }
+
+    public void setTime_minutes(Integer time_minutes) {
+        this.time_minutes = time_minutes;
+    }
+
 }
