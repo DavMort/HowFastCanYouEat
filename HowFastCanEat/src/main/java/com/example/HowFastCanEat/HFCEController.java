@@ -17,9 +17,9 @@ public class HFCEController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("foodHotDog", new Food());
-        model.addAttribute("foodPizza", new Food());
-        model.addAttribute("foodBurger", new Food());
+        model.addAttribute("foodHotDog", new OldFood());
+        model.addAttribute("foodPizza", new OldFood());
+        model.addAttribute("foodBurger", new OldFood());
         model.addAttribute("korvList", records.top3(records.korvList));
         model.addAttribute("pizzaList", records.top3(records.pizzaList));
         model.addAttribute("burgerList", records.top3(records.burgerList));
@@ -27,49 +27,49 @@ public class HFCEController {
     }
 
     @PostMapping("/saveHotdog")
-    public String newRecordHotdog(@Valid Food foodHotDog, BindingResult result, Model model) {
+    public String newRecordHotdog(@Valid OldFood oldFoodHotDog, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            model.addAttribute("foodHotDog", foodHotDog);
-            model.addAttribute("foodPizza", new Food());
-            model.addAttribute("foodBurger", new Food());
+            model.addAttribute("foodHotDog", oldFoodHotDog);
+            model.addAttribute("foodPizza", new OldFood());
+            model.addAttribute("foodBurger", new OldFood());
             model.addAttribute("korvList", records.top3(records.korvList));
             model.addAttribute("pizzaList", records.top3(records.pizzaList));
             model.addAttribute("burgerList", records.top3(records.burgerList));
             return "index";
         }
-        records.addFood(records.korvList, foodHotDog.name, foodHotDog.numberOfFood, foodHotDog.time);
+        records.addFood(records.korvList, oldFoodHotDog.name, oldFoodHotDog.numberOfFood, oldFoodHotDog.time);
         records.sortList(records.korvList);
         return "redirect:/";
     }
 
     @PostMapping("/savePizza")
-    public String newRecordPizza(@Valid Food foodPizza, BindingResult result, Model model) {
+    public String newRecordPizza(@Valid OldFood oldFoodPizza, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            model.addAttribute("foodHotDog", new Food());
-            model.addAttribute("foodPizza", foodPizza);
-            model.addAttribute("foodBurger", new Food());
+            model.addAttribute("foodHotDog", new OldFood());
+            model.addAttribute("foodPizza", oldFoodPizza);
+            model.addAttribute("foodBurger", new OldFood());
             model.addAttribute("korvList", records.top3(records.korvList));
             model.addAttribute("pizzaList", records.top3(records.pizzaList));
             model.addAttribute("burgerList", records.top3(records.burgerList));
             return "index";
         }
-        records.addFood(records.pizzaList, foodPizza.name, foodPizza.numberOfFood, foodPizza.time);
+        records.addFood(records.pizzaList, oldFoodPizza.name, oldFoodPizza.numberOfFood, oldFoodPizza.time);
         records.sortList(records.pizzaList);
         return "redirect:/";
     }
 
     @PostMapping("/saveBurger")
-    public String newRecordBurger(@Valid Food foodBurger, BindingResult result, Model model) {
+    public String newRecordBurger(@Valid OldFood oldFoodBurger, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            model.addAttribute("foodHotDog", new Food());
-            model.addAttribute("foodPizza", new Food());
-            model.addAttribute("foodBurger", foodBurger);
+            model.addAttribute("foodHotDog", new OldFood());
+            model.addAttribute("foodPizza", new OldFood());
+            model.addAttribute("foodBurger", oldFoodBurger);
             model.addAttribute("korvList", records.top3(records.korvList));
             model.addAttribute("pizzaList", records.top3(records.pizzaList));
             model.addAttribute("burgerList", records.top3(records.burgerList));
             return "index";
         }
-        records.addFood(records.burgerList, foodBurger.name, foodBurger.numberOfFood, foodBurger.time);
+        records.addFood(records.burgerList, oldFoodBurger.name, oldFoodBurger.numberOfFood, oldFoodBurger.time);
         records.sortList(records.burgerList);
         return "redirect:/";
     }

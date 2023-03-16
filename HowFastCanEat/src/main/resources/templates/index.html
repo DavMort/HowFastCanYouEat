@@ -33,7 +33,7 @@
 <div>
     <h3>Register New Hot Dog Record</h3>
 </div>
-<form action="/saveHotdog" th:object="${foodHotDog}" method="POST">
+<form action="/saveHotdog" th:object="${oldFoodHotDog}" method="POST">
     <field th:text="${#fields.hasErrors('name')} ? 'Please enter a valid name' : ''"></field>
     <input id="hotdogname" type="text" th:field="*{name}" placeholder="Please add a name">
     <field th:text="${#fields.hasErrors('numberOfFood')} ? 'Please enter how many' : ''"></field>
@@ -65,7 +65,7 @@
 <div>
     <h3>Register New Pizza Record</h3>
 </div>
-<form action="/savePizza" th:object="${foodPizza}" method="POST">
+<form action="/savePizza" th:object="${oldFoodPizza}" method="POST">
     <field th:text="${#fields.hasErrors('name')} ? 'Please enter a valid name' : ''"></field>
     <input type="text" th:field="*{name}" placeholder="Please add a name">
     <field th:text="${#fields.hasErrors('numberOfFood')} ? 'Please enter how many' : ''"></field>
@@ -97,7 +97,7 @@
 <div>
     <h3>Register New Burger Record</h3>
 </div>
-<form action="/saveBurger" th:object="${foodBurger}" method="POST">
+<form action="/saveBurger" th:object="${oldFoodBurger}" method="POST">
     <field th:text="${#fields.hasErrors('name')} ? 'Please enter a valid name' : ''"></field>
     <input type="text" th:field="*{name}" placeholder="Please add a name">
     <field th:text="${#fields.hasErrors('numberOfFood')} ? 'Please enter how many' : ''"></field>

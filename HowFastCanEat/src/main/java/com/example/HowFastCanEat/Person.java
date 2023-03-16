@@ -1,18 +1,20 @@
 package com.example.HowFastCanEat;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public class Food {
+public class Person {
     @Id
+    @GeneratedValue
     private Integer id;
     private String name;
 
-    public Food() {
+    public Person() {
     }
 
-    public Food(Integer id, String name) {
+    public Person(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
