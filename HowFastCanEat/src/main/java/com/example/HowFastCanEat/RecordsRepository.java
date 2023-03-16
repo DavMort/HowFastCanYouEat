@@ -13,5 +13,7 @@ public interface RecordsRepository extends CrudRepository<Records, Integer> {
             "ON FOOD.ID = RECORDS.FOOD_ID\n" +
             "where food.id = ?1\n" +
             "order by count_eaten desc", nativeQuery = true)
-    List<Records> findAllByFoodId(int food_id);
+    List<Records> findAllByFoodId(Integer food_id);
+
+    List<Records> findAllByOrderByIdDesc();
 }
