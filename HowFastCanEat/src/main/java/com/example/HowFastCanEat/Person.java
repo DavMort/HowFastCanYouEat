@@ -2,17 +2,20 @@ package com.example.HowFastCanEat;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 public class Person {
+
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    private List<Records> records = new ArrayList<>();
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
 
-
-    @JoinColumn(name="records.person_id")
-    private Records records;
 
     public Person() {
     }

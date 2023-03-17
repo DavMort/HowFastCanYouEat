@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<h1><img src="TopDogs_Logo.png" alt="Top Dogs" height="350"></h1>
+<h1><img src="transparent_TopDogs2.1_Logo.png" alt="Top Dogs" height="350"></h1>
 <h2>Top Hot Dog Eaters</h2>
 <div class="row">
     <table>
@@ -20,8 +20,7 @@
             <th>Hotdogs per minute</th>
         </tr>
         <tr th:each="records : ${record}">
-            <td th:text="${records.person_id}"></td>
-            <td th:text="${records.count_eaten}"></td>
+            <td th:text="${records.name}"></td>
         </tr>
     </table>
     <table>

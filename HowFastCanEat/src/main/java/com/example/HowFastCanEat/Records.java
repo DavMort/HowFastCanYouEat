@@ -2,11 +2,18 @@ package com.example.HowFastCanEat;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Records {
 
+    @ManyToOne
+    @JoinColumn(insertable=false, updatable=false)
+    private Person person;
+
     @Id
-    @GeneratedValue /*(strategy = GenerationType.IDENTITY)*/
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer person_id;
     private Integer food_id;
