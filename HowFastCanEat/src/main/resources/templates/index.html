@@ -12,8 +12,13 @@
 <h1><img src="TopDogs_Logo.png" alt="Top Dogs" height="350"></h1>
 <h2>Top Hot Dog Eaters</h2>
 <div class="row">
-    Name  Hotdogs Eaten  Time Hotdogs per minute
     <table>
+        <tr>
+            <th>Name</th>
+            <th>Hotdogs Eaten</th>
+            <th>Time</th>
+            <th>Hotdogs per minute</th>
+        </tr>
         <tr th:each="record : ${korvList}">
             <td th:text="${record.name}"></td>
             <td th:text="${record.numberOfFood}"></td>
