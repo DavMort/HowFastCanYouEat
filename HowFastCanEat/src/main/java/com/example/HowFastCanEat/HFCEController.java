@@ -104,7 +104,8 @@ public class HFCEController {
 
     @GetMapping("/test")
     public String testTop3(Model model) {
-        model.addAttribute("record", recordsService.getAllPerson());
+        model.addAttribute("record", recordsService.getTopThree());
+        model.addAttribute("persons", recordsService.getAllPerson());
         return "test";
     }
 }
