@@ -6,9 +6,13 @@ import jakarta.persistence.*;
 @Entity
 public class Person {
     @Id
-    @GeneratedValue /*(strategy = GenerationType.IDENTITY)*/
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+
+
+    @JoinColumn(name="records.person_id")
+    private Records records;
 
     public Person() {
     }

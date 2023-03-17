@@ -18,10 +18,14 @@ public class RecordsService {
     //metoder under her
 
     public List<Records> getTopThree() {
-        return (List<Records>) recordsRepository.findAllByOrderByIdDesc();
+        return recordsRepository.findAllByOrderByIdDesc();
     }
 
     public List<Records> getByFood() {
         return recordsRepository.findAllByFoodId(1);
+    }
+
+    public List<Person> getAllPerson() {
+        return (List<Person>) personRepository.findAll();
     }
 }
